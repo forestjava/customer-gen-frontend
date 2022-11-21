@@ -1,0 +1,45 @@
+query UserGroups($orderBy: [UserGroupOrderByWithRelationInput!]) {
+  userGroups(orderBy: $orderBy) {
+    id
+  
+    name
+  
+    description
+  
+    color
+  
+  }
+}
+
+query UserGroup($where: UserGroupWhereUniqueInput!) {
+  userGroup(where: $where) {
+    id
+  
+    name
+  
+    users { id username }
+  
+    description
+  
+    color
+  
+  }
+}
+
+mutation CreateOneUserGroup($data: UserGroupCreateInput!) {
+  createOneUserGroup(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneUserGroup($data: UserGroupUpdateInput!, $where: UserGroupWhereUniqueInput!) {
+  updateOneUserGroup(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneUserGroup($where: UserGroupWhereUniqueInput!) {
+  deleteOneUserGroup(where: $where) {
+    id
+  }
+}

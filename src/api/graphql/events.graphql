@@ -1,0 +1,47 @@
+query Events($orderBy: [EventOrderByWithRelationInput!]) {
+  events(orderBy: $orderBy) {
+    id
+  
+    moment
+  
+    message
+  
+    device { id name }
+  
+    priority { id name }
+  
+  }
+}
+
+query Event($where: EventWhereUniqueInput!) {
+  event(where: $where) {
+    id
+  
+    moment
+  
+    message
+  
+    device { id name }
+  
+    priority { id name }
+  
+  }
+}
+
+mutation CreateOneEvent($data: EventCreateInput!) {
+  createOneEvent(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneEvent($data: EventUpdateInput!, $where: EventWhereUniqueInput!) {
+  updateOneEvent(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneEvent($where: EventWhereUniqueInput!) {
+  deleteOneEvent(where: $where) {
+    id
+  }
+}

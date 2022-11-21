@@ -1,0 +1,61 @@
+query SmartPoles($orderBy: [SmartPoleOrderByWithRelationInput!]) {
+  smartPoles(orderBy: $orderBy) {
+    id
+  
+    name
+  
+    serial
+  
+    latitude
+  
+    longitude
+  
+    zone { id name }
+  
+    connectLocationId
+  
+    connectDeviceId
+  
+  }
+}
+
+query SmartPole($where: SmartPoleWhereUniqueInput!) {
+  smartPole(where: $where) {
+    id
+  
+    name
+  
+    serial
+  
+    latitude
+  
+    longitude
+  
+    zone { id name }
+  
+    devices { id name }
+  
+    connectLocationId
+  
+    connectDeviceId
+  
+  }
+}
+
+mutation CreateOneSmartPole($data: SmartPoleCreateInput!) {
+  createOneSmartPole(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneSmartPole($data: SmartPoleUpdateInput!, $where: SmartPoleWhereUniqueInput!) {
+  updateOneSmartPole(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneSmartPole($where: SmartPoleWhereUniqueInput!) {
+  deleteOneSmartPole(where: $where) {
+    id
+  }
+}

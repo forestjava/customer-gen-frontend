@@ -1,0 +1,153 @@
+.box {
+  &.row {
+    @apply flex flex-row gap-x-1;
+  }
+
+  &.column {
+    @apply flex flex-col gap-y-1;
+  }
+
+  &.nav-bar {
+    @apply flex flex-col justify-center p-2;
+    @apply bg-slate-800 text-white;
+  }
+
+  &.view {
+    @apply p-4 flex flex-col gap-4;
+  }
+
+  &.drawer {
+    @apply absolute right-0 top-0 h-screen w-[33vw];
+    @apply bg-white shadow-lg border;
+    @apply overflow-auto;
+    @apply p-5 flex flex-col gap-4;
+  }
+
+  &.label-input {
+    @apply flex flex-col;
+    label {
+      @apply text-sm text-slate-600;
+    }
+  }
+
+  .selected-list {
+    @apply flex flex-row gap-1 items-start flex-wrap p-2;
+    @apply h-auto;
+  }
+
+  .selected-list-item {
+    @apply flex flex-row gap-2 items-center;
+    @apply bg-white text-base text-slate-600 border shadow-sm rounded-xl px-2;
+  }
+}
+
+.button {
+  @apply whitespace-nowrap px-4 py-1 focus:outline-slate-300;
+  @apply flex flex-row justify-between items-center;
+
+  &.ghost {
+    @apply bg-transparent border-none p-0;
+  }
+
+  &.icon {
+    @apply bg-transparent border-none p-0;
+    svg {
+      @apply w-6 h-6 stroke-slate-600 fill-white;
+    }
+    &.append {
+      svg {
+        @apply stroke-blue-400;
+      }
+    }
+    &.remove {
+      svg {
+        @apply stroke-rose-300;
+      }
+    }
+  }
+
+  &.primary {
+    @apply px-4 rounded h-10 min-w-[6rem] justify-center;
+
+    @apply bg-blue-400 text-white;
+    @apply hover:bg-blue-500;
+  }
+
+  &.secondary {
+    @apply px-4 rounded h-10;
+
+    @apply text-blue-400 border border-blue-400 text-blue-400;
+    @apply hover:text-blue-500;
+  }
+
+  &.dangerous {
+    @apply px-4 rounded h-10;
+
+    @apply text-rose-500 border border-rose-500 text-rose-500;
+    @apply hover:text-rose-600;
+  }
+
+  &.select {
+    @apply border rounded-md bg-slate-100 text-slate-600;
+    @apply h-10;
+    svg {
+      @apply w-4 h-4 stroke-slate-700;
+    }
+  }
+
+  &.select-item {
+    @apply text-base text-slate-600 hover:text-white hover:bg-blue-400;
+    @apply px-2 py-1 rounded;
+    @apply w-full;
+  }
+}
+
+.form {
+  @apply flex flex-col gap-y-3;
+}
+
+.heading {
+}
+
+.input {
+  &.self {
+    @apply border rounded-md bg-slate-100 text-slate-600 focus:outline-slate-300;
+    @apply h-10 px-2;
+  }
+}
+
+.link {
+  &.nav-link {
+    @apply p-2 rounded;
+    &.active {
+      @apply bg-slate-700;
+    }
+  }
+}
+
+.select-list {
+  @apply border shadow bg-white rounded;
+}
+
+.table {
+  @apply rounded overflow-hidden border border-slate-500;
+  thead {
+    @apply bg-slate-500 text-white;
+    th {
+      @apply py-1 px-2 whitespace-nowrap;
+      @apply text-left;
+    }
+  }
+  tr {
+    @apply border-b border-slate-100;
+    &:last-child {
+      @apply border-none;
+    }
+    td {
+      @apply py-1 px-2 whitespace-nowrap;
+    }
+  }
+  td {
+    @apply py-1 px-2 whitespace-nowrap;
+  }
+}

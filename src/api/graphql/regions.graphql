@@ -1,0 +1,41 @@
+query Regions($orderBy: [RegionOrderByWithRelationInput!]) {
+  regions(orderBy: $orderBy) {
+    id
+  
+    name
+  
+    company { id name }
+  
+  }
+}
+
+query Region($where: RegionWhereUniqueInput!) {
+  region(where: $where) {
+    id
+  
+    name
+  
+    company { id name }
+  
+    formations { id name }
+  
+  }
+}
+
+mutation CreateOneRegion($data: RegionCreateInput!) {
+  createOneRegion(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneRegion($data: RegionUpdateInput!, $where: RegionWhereUniqueInput!) {
+  updateOneRegion(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneRegion($where: RegionWhereUniqueInput!) {
+  deleteOneRegion(where: $where) {
+    id
+  }
+}

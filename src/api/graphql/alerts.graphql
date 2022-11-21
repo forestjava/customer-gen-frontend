@@ -1,0 +1,43 @@
+query Alerts($orderBy: [AlertOrderByWithRelationInput!]) {
+  alerts(orderBy: $orderBy) {
+    id
+  
+    device { id name }
+  
+    message
+  
+    priority { id name }
+  
+  }
+}
+
+query Alert($where: AlertWhereUniqueInput!) {
+  alert(where: $where) {
+    id
+  
+    device { id name }
+  
+    message
+  
+    priority { id name }
+  
+  }
+}
+
+mutation CreateOneAlert($data: AlertCreateInput!) {
+  createOneAlert(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneAlert($data: AlertUpdateInput!, $where: AlertWhereUniqueInput!) {
+  updateOneAlert(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneAlert($where: AlertWhereUniqueInput!) {
+  deleteOneAlert(where: $where) {
+    id
+  }
+}

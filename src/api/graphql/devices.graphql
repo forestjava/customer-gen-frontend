@@ -1,0 +1,59 @@
+query Devices($orderBy: [DeviceOrderByWithRelationInput!]) {
+  devices(orderBy: $orderBy) {
+    id
+  
+    serial
+  
+    type { id name }
+  
+    uuid
+  
+    smartPole { id name }
+  
+    name
+  
+    connectParamIndex
+  
+  }
+}
+
+query Device($where: DeviceWhereUniqueInput!) {
+  device(where: $where) {
+    id
+  
+    serial
+  
+    type { id name }
+  
+    uuid
+  
+    alerts { id message }
+  
+    events { id message }
+  
+    smartPole { id name }
+  
+    name
+  
+    connectParamIndex
+  
+  }
+}
+
+mutation CreateOneDevice($data: DeviceCreateInput!) {
+  createOneDevice(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneDevice($data: DeviceUpdateInput!, $where: DeviceWhereUniqueInput!) {
+  updateOneDevice(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneDevice($where: DeviceWhereUniqueInput!) {
+  deleteOneDevice(where: $where) {
+    id
+  }
+}

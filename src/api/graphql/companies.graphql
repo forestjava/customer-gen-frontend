@@ -1,0 +1,41 @@
+query Companies($orderBy: [CompanyOrderByWithRelationInput!]) {
+  companies(orderBy: $orderBy) {
+    id
+  
+    name
+  
+  }
+}
+
+query Company($where: CompanyWhereUniqueInput!) {
+  company(where: $where) {
+    id
+  
+    name
+  
+    icon
+  
+    logo
+  
+    regions { id name }
+  
+  }
+}
+
+mutation CreateOneCompany($data: CompanyCreateInput!) {
+  createOneCompany(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneCompany($data: CompanyUpdateInput!, $where: CompanyWhereUniqueInput!) {
+  updateOneCompany(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneCompany($where: CompanyWhereUniqueInput!) {
+  deleteOneCompany(where: $where) {
+    id
+  }
+}

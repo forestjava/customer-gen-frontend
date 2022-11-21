@@ -1,0 +1,37 @@
+query Solutions($orderBy: [SolutionOrderByWithRelationInput!]) {
+  solutions(orderBy: $orderBy) {
+    id
+  
+    name
+  
+  }
+}
+
+query Solution($where: SolutionWhereUniqueInput!) {
+  solution(where: $where) {
+    id
+  
+    name
+  
+    formations { id name }
+  
+  }
+}
+
+mutation CreateOneSolution($data: SolutionCreateInput!) {
+  createOneSolution(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneSolution($data: SolutionUpdateInput!, $where: SolutionWhereUniqueInput!) {
+  updateOneSolution(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneSolution($where: SolutionWhereUniqueInput!) {
+  deleteOneSolution(where: $where) {
+    id
+  }
+}

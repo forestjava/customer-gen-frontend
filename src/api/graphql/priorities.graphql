@@ -1,0 +1,39 @@
+query Priorities($orderBy: [PriorityOrderByWithRelationInput!]) {
+  priorities(orderBy: $orderBy) {
+    id
+  
+    name
+  
+  }
+}
+
+query Priority($where: PriorityWhereUniqueInput!) {
+  priority(where: $where) {
+    id
+  
+    name
+  
+    alerts { id message }
+  
+    events { id message }
+  
+  }
+}
+
+mutation CreateOnePriority($data: PriorityCreateInput!) {
+  createOnePriority(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOnePriority($data: PriorityUpdateInput!, $where: PriorityWhereUniqueInput!) {
+  updateOnePriority(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOnePriority($where: PriorityWhereUniqueInput!) {
+  deleteOnePriority(where: $where) {
+    id
+  }
+}

@@ -1,0 +1,37 @@
+query DeviceTypes($orderBy: [DeviceTypeOrderByWithRelationInput!]) {
+  deviceTypes(orderBy: $orderBy) {
+    id
+  
+    name
+  
+  }
+}
+
+query DeviceType($where: DeviceTypeWhereUniqueInput!) {
+  deviceType(where: $where) {
+    id
+  
+    name
+  
+    devices { id name }
+  
+  }
+}
+
+mutation CreateOneDeviceType($data: DeviceTypeCreateInput!) {
+  createOneDeviceType(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneDeviceType($data: DeviceTypeUpdateInput!, $where: DeviceTypeWhereUniqueInput!) {
+  updateOneDeviceType(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneDeviceType($where: DeviceTypeWhereUniqueInput!) {
+  deleteOneDeviceType(where: $where) {
+    id
+  }
+}

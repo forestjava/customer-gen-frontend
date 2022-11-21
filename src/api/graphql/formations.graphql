@@ -1,0 +1,47 @@
+query Formations($orderBy: [FormationOrderByWithRelationInput!]) {
+  formations(orderBy: $orderBy) {
+    id
+  
+    name
+  
+    address
+  
+    region { id name }
+  
+  }
+}
+
+query Formation($where: FormationWhereUniqueInput!) {
+  formation(where: $where) {
+    id
+  
+    name
+  
+    address
+  
+    solutions { id name }
+  
+    region { id name }
+  
+    zones { id name }
+  
+  }
+}
+
+mutation CreateOneFormation($data: FormationCreateInput!) {
+  createOneFormation(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneFormation($data: FormationUpdateInput!, $where: FormationWhereUniqueInput!) {
+  updateOneFormation(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneFormation($where: FormationWhereUniqueInput!) {
+  deleteOneFormation(where: $where) {
+    id
+  }
+}

@@ -1,0 +1,37 @@
+query UserRoles($orderBy: [UserRoleOrderByWithRelationInput!]) {
+  userRoles(orderBy: $orderBy) {
+    id
+  
+    name
+  
+  }
+}
+
+query UserRole($where: UserRoleWhereUniqueInput!) {
+  userRole(where: $where) {
+    id
+  
+    name
+  
+    users { id username }
+  
+  }
+}
+
+mutation CreateOneUserRole($data: UserRoleCreateInput!) {
+  createOneUserRole(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneUserRole($data: UserRoleUpdateInput!, $where: UserRoleWhereUniqueInput!) {
+  updateOneUserRole(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneUserRole($where: UserRoleWhereUniqueInput!) {
+  deleteOneUserRole(where: $where) {
+    id
+  }
+}

@@ -1,0 +1,41 @@
+query Zones($orderBy: [ZoneOrderByWithRelationInput!]) {
+  zones(orderBy: $orderBy) {
+    id
+  
+    name
+  
+    formation { id name }
+  
+  }
+}
+
+query Zone($where: ZoneWhereUniqueInput!) {
+  zone(where: $where) {
+    id
+  
+    name
+  
+    formation { id name }
+  
+    smartPoles { id name }
+  
+  }
+}
+
+mutation CreateOneZone($data: ZoneCreateInput!) {
+  createOneZone(data: $data) {
+    id
+  }
+}
+
+mutation UpdateOneZone($data: ZoneUpdateInput!, $where: ZoneWhereUniqueInput!) {
+  updateOneZone(data: $data, where: $where) {
+    id
+  }
+}
+
+mutation DeleteOneZone($where: ZoneWhereUniqueInput!) {
+  deleteOneZone(where: $where) {
+    id
+  }
+}
